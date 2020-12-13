@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.files.storage import FileSystemStorage
+from .forms import BookForm
+from .models import Book
 
 def home(request):
 	count = User.objects.count()
@@ -35,3 +37,20 @@ def upload(request):
 		name = fs.save(uploaded_file.name, uploaded_file)
 		context['url'] = fs.url(name)
 	return render(request, 'upload.html',context)
+
+def book_list(request):
+	books = Book.objects.all()
+	return render(request,'book_list.html',{'books':books})
+
+def upload_book(request):
+	if request.method == 'POST':
+		form = BookForm(request.POST,request.FILES)
+		if form.is_valid():
+			form.save()
+			# messages.add_message(request,messages.SUCCESS,"You have uploaded successfully.")
+			return redirect('book_list')
+	else:
+		form = BookForm()
+	return render(request,'upload_book.html',{
+		'form' : form
+		})

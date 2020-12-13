@@ -10,6 +10,8 @@ urlpatterns = [
 	path('secret/',views.secret_page,name='secret'),
 	path('secret2/', views.SecretPage.as_view(),name='secret2'),
 	path('upload/', views.upload, name='upload'),
+	path('books/',views.book_list,name='book_list'),
+    path('books/upload/',views.upload_book,name='upload_book'),
 	path('accounts/',include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
