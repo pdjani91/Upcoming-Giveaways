@@ -66,3 +66,9 @@ class UploadBookView(CreateView):
 	form_class = BookForm
 	success_url = reverse_lazy('class_book_list')
 	template_name = 'upload_book.html'
+
+def delete_book(request,pk): # pk = primary key
+	if request.method == 'POST':
+		book = Book.objects.get(pk=pk)
+		book.delete()
+	return redirect('book_list')
