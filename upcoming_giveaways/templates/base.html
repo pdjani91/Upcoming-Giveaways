@@ -41,17 +41,17 @@
 	        <a class="nav-link" href="{% url 'home' %}">Home</a>
 	      </li>
 	      {% if user.is_authenticated %}
-		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'secret' %}">Secret Page</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'secret2' %}">Secret Page 2</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'upload' %}">Upload</a>
-		      </li>
-		      <li class="nav-item">
+<!-- 		      <li class="nav-item">
 		        <a class="nav-link" href="{% url 'upload_book' %}">Upload Books</a>
+		      </li> -->
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Giveaways</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">International Giveaways</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Winners</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="{% url 'book_list' %}">Books List</a>
@@ -68,8 +68,6 @@
 		          {{user.username}}
 		        </a>
 		        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-		        	<a class="dropdown-item">Total User : {{ count }} </a>
-		        <div class="dropdown-divider"></div>
 		          	<a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
 		        <div class="dropdown-divider"></div>
 		          	<a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
