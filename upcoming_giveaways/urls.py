@@ -11,6 +11,7 @@ urlpatterns = [
     path('books/upload/',views.upload_book,name='upload_book'),
     path('books/<int:pk>/',views.delete_book,name='delete_book'),
 	path('accounts/',include('django.contrib.auth.urls')),
+	path('giveaways/',views.giveaways,name='giveaways'),
     path('admin/', admin.site.urls),
 ]
 

@@ -7,7 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.files.storage import FileSystemStorage
 from django.urls import reverse_lazy
 from .forms import BookForm
-from .models import Book
+from .models import Book,Giveaways
 
 def home(request):
 	count = User.objects.count()
@@ -23,10 +23,14 @@ def signup(request):
 		form = UserCreationForm
 	return render(request,'registration/signup.html',{'form':form})
 
-
+@login_required
 def book_list(request):
 	books = Book.objects.all()
 	return render(request,'book_list.html',{'books':books})
+
+def giveaways(request):
+	items = Giveaways.objects.all()
+	return render(request,'giveaways.html',{'items':items})
 
 def upload_book(request):
 	if request.method == 'POST':
