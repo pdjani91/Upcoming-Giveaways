@@ -44,9 +44,11 @@
 	      <li class="nav-item">
 	        <a style="color: white" class="nav-link" href="{% url 'home' %}">Home</a>
 	      </li>
+	     
 	       <li class="nav-item">
 		        <a style="color: white" class="nav-link" href="{% url 'giveaways' %}">Giveaways</a>
 		      </li>
+		      
 	      <!-- {% if user.is_authenticated %} -->
 <!-- 		      <li class="nav-item">
 		        <a class="nav-link" href="{% url 'upload_book' %}">Upload Books</a>
@@ -82,8 +84,8 @@
 	    </ul>
 	    {% else %}
 		    <form class="form-inline my-2 my-lg-0">
-		    	<a href="{% url 'login' %}" class="btn btn-outline-secondary">LogIn</a>
-				<a href="{% url 'signup' %}" class="btn btn-primary ml-2">SignUp</a>
+		    	<a href="{% url 'login' %}" class="btn btn-outline-secondary">Login</a>
+				<a href="{% url 'signup' %}" class="btn btn-primary ml-2">Signup</a>
 		    </form>
 	    {% endif %}
 	  </div>
@@ -96,7 +98,7 @@
 	<footer class="footer fixed-bottom">
       <div class="bg-dark">
       	<div class="container text-right">
-        <span class="text-muted"><a style="color: white">Developed By : PARTH JANI</a></span>
+        <span class="text-muted"><a style="color: white">Developed By : Parth Jani</a></span>
         </div>
       </div>
     </footer>
