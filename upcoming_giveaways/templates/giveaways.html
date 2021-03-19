@@ -6,10 +6,6 @@
 {% endblock %} -->
 
 <style type="text/css">
-	.border-danger{
-		background-color: yellow;
-	}
-
 	tr {
 		border: 3px solid black;
 	}
@@ -41,7 +37,7 @@
 		<tbody>
 			{% for item in items %}
 				<tr>
-					<td style="border:3px solid black;">
+					<td style="border:3px solid black; text-align:center; vertical-align:middle">
 						{% if item.logo %}
 							<img src="{{item.logo.url}}" alt="{{item.name}}" style="width: 100px;">
 						{% else %}

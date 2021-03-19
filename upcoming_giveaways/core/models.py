@@ -15,8 +15,8 @@ class Book(models.Model):
 		super().delete(*args,**kwargs)
 
 STATUS_TYPE = (
-    ('open','OPEN'),
-    ('close', 'CLOSE'),
+    ('OPEN','OPEN'),
+    ('CLOSE', 'CLOSE'),
 )
 CATEGORY = (
     ('other','Other'),
